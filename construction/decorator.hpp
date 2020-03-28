@@ -34,7 +34,7 @@ using namespace std;
 class Component
 {
 public:
-	virtual void Operation() = 0;
+	virtual void operation() = 0;
 };
 
 
@@ -49,7 +49,7 @@ public:
 
 	}
 public:
-	void Operation() override
+	void operation() override
 	{
 		cout << "ConcreteComponent Operation\n";
 	}
@@ -67,8 +67,8 @@ public:
 		component = com;
 	}
 
-	void Operation() override {
-		component->Operation();
+	void operation() override {
+		component->operation();
 	};
 private:
 	Component* component = nullptr;
@@ -82,13 +82,13 @@ public:
 	~ConcreteDecoratorA() {};
 
 public:
-	void Operation() override {
-		__super::Operation();
+	void operation() override {
+		__super::operation();
 		cout << "ConcreteDecoratorA Operation\n";
-		OperationA();
+		operationA();
 	};
 
-	void OperationA() {
+	void operationA() {
 		cout << "ConcreteDecoratorA Add something\n";
 	}
 };
@@ -101,13 +101,13 @@ public:
 	~ConcreteDecoratorB() {};
 
 public:
-	void Operation() override {
-		__super::Operation();
+	void operation() override {
+		__super::operation();
 		cout << "ConcreteDecoratorB Operation\n";
-		OperationB();
+		operationB();
 	};
 
-	void OperationB() {
+	void operationB() {
 		cout << "ConcreteDecoratorB Add something\n";
 	}
 };

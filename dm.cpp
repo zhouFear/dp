@@ -9,6 +9,7 @@
 
 #include "./construction/proxy.hpp"
 #include "./construction/decorator.hpp"
+#include "./construction/facade.hpp"
 
 #include "./behaviour/templatemethod.hpp"
 #include "./behaviour/strategy.hpp"
@@ -55,7 +56,15 @@ int main()
         shared_ptr<Decorator> B(new ConcreteDecoratorB());
         A->setComponent(cc.get());
         B->setComponent(A.get());
-        B->Operation();
+        B->operation();
+    }
+
+    // 外观模式
+    if (1)
+    {
+        cout << "外观模式" << endl;
+        shared_ptr<Facade> spFacade = make_shared<Facade>();
+        spFacade->method();
     }
 
 
