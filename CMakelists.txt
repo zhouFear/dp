@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.16)
+project(dm)
+
+set(SOURCEDIR ${PROJECT_SOURCE_DIR}/src)
+set(BUILDSRC
+${SOURCEDIR}/build/factory.hpp
+${SOURCEDIR}/build/prototype.hpp
+)
+
+set(BEHAVIOURSRC
+${SOURCEDIR}/behaviour/strategy.hpp
+${SOURCEDIR}/behaviour/templatemethod.hpp
+)
+
+set(CONSTRUCTIONSRC
+${SOURCEDIR}/construction/decorator.hpp
+${SOURCEDIR}/construction/facade.hpp
+${SOURCEDIR}/construction/proxy.hpp
+)
+
+source_group(build FILES ${BUILDSRC})
+source_group(behaviour FILES ${BEHAVIOURSRC})
+source_group(construction FILES ${CONSTRUCTIONSRC})
+
+ADD_EXECUTABLE(dm 
+${SOURCEDIR}/dm.cpp
+${BUILDSRC}
+${BEHAVIOURSRC}
+${CONSTRUCTIONSRC}
+)
