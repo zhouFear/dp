@@ -14,8 +14,12 @@
 
 #include "./behaviour/templatemethod.hpp"
 #include "./behaviour/strategy.hpp"
+#include "./behaviour/state.hpp"
 
 using namespace std;
+
+State::State* State::ConcreteStateA::instance = nullptr;
+State::State* State::ConcreteStateB::instance = nullptr;
 
 int main()
 {
@@ -105,6 +109,18 @@ int main()
 
         auto spContextB = make_shared<Context>(1);
         spContextB->doSomething(100);
+    }
+
+    // 状态模式
+    if (1)
+    {
+        cout << "状态模式" << endl;
+        auto spContext = make_shared<State::Context>();
+        spContext->request();
+        spContext->request();
+        spContext->request();
+        spContext->request();
+        spContext->request();
     }
     
 }

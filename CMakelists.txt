@@ -5,11 +5,13 @@ set(SOURCEDIR ${PROJECT_SOURCE_DIR}/src)
 set(BUILDSRC
 ${SOURCEDIR}/build/factory.hpp
 ${SOURCEDIR}/build/prototype.hpp
+${SOURCEDIR}/build/builder.hpp
 )
 
 set(BEHAVIOURSRC
 ${SOURCEDIR}/behaviour/strategy.hpp
 ${SOURCEDIR}/behaviour/templatemethod.hpp
+${SOURCEDIR}/behaviour/state.hpp
 )
 
 set(CONSTRUCTIONSRC
